@@ -5,18 +5,25 @@ class Candidate:
     def __init__(self, candidete_name, candidete_votes):
         self.name = candidete_name
         self.__votes = candidete_votes
+    
     def get_name(self):
         return self.name
+    
     def get_votes(self):
         return self.__votes
+    
     def set_votes(self, votes):
         self.__votes = votes
+    
     def set_name(self, name):
         self.name = name
+    
     def get_percentage_of_total_votes(self, total_votes1):
         return (self.__votes / total_votes1) * 100
+    
     def __str__(self):
         return f"{self.name}: {self.__votes} голосів"
+    
     def __del__(self):
         print(f"Обєкт Candidate з ім'ям {self.name} видаляється")
 
