@@ -34,8 +34,8 @@ class Elections:
     def __init__(self):
         self.__candidates = []
 
-    def add_candidate(self, candidate):
-        self.__candidates.append(candidate)
+    def add_candidate(self, candidate1):
+        self.__candidates.append(candidate1)
 
     def calculate_winner(self):
         return max(self.__candidates, key=lambda candidate: candidate.get_votes())
@@ -43,8 +43,8 @@ class Elections:
     def find_winner(self):
         return self.calculate_winner()
 
-    def remove_candidate(self, candidate):
-        self.__candidates.remove(candidate)
+    def remove_candidate(self, candidate1):
+        self.__candidates.remove(candidate1)
 
     def get_candidates(self):
         return self.__candidates
@@ -54,10 +54,10 @@ if __name__ == "__main__":
     total_votes = 0
 
     for i in range(5):
-        name = input(f"Enter the name of candidate {i + 1}: ")
-        votes = int(input(f"Enter the number of votes for {name}: "))
-        total_votes += votes
-        candidate = Candidate(name, votes)
+        candidate_name = input(f"Enter the name of candidate {i + 1}: ")
+        candidate_votes = int(input(f"Enter the number of votes for {candidate_name}: "))
+        total_votes += candidate_votes
+        candidate = Candidate(candidate_name, candidate_votes)
         elections.add_candidate(candidate)
 
     print("\nElection Results:")
